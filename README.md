@@ -8,30 +8,37 @@ O Índice Público é uma plataforma de análise de desempenho e transparência 
 
 ## Escopo de implementação
 
-A expansão do projeto seguirá esta ordem:
-
 1. **Deputados Federais**
 2. **Senadores**
 3. **Governadores**
 4. **Presidente da República**
 
-A metodologia será adaptada a cada cargo quando suas atribuições, fontes ou dados forem diferentes. Uma fórmula criada para o Legislativo não será aplicada automaticamente ao Executivo.
+A metodologia será adaptada a cada cargo quando suas atribuições, fontes ou dados forem diferentes.
 
-### Fase 1 — Deputados Federais
+## Perfil do político
 
-Primeiro grupo de comparação e validação da metodologia, priorizando dados estruturados e oficiais da Câmara dos Deputados.
+Cada político terá um perfil com identificação, avaliação por ano, histórico anual, indicadores, cobertura, atuação política, recursos públicos, histórico eleitoral, registros jurídicos, compromissos, linha do tempo, fontes e auditoria.
 
-### Fase 2 — Senadores
+O perfil não será apenas uma nota: cada resultado deverá permitir rastrear o caminho até o dado e a fonte original.
 
-Depois da validação com deputados federais, incorporação do Senado Federal e adaptação dos indicadores às atribuições específicas do cargo.
+## Histórico por ano
 
-### Fase 3 — Governadores
+O ano é uma dimensão estrutural, não apenas um filtro visual.
 
-Adaptação para o Poder Executivo estadual, com indicadores compatíveis com gestão, orçamento, transparência, contratos e resultados verificáveis.
+A plataforma deverá permitir consultar **2026 → 2025 → 2024 → ...**. Cada resultado preservará período, cargo, mandato/legislatura, metodologia, cobertura, dados, fontes e cálculo.
 
-### Fase 4 — Presidente da República
+**O passado não será recalculado silenciosamente com a metodologia atual.**
 
-Adaptação para o Poder Executivo federal, considerando suas atribuições e fontes oficiais próprias.
+## Contexto partidário
+
+O perfil poderá apresentar, separadamente da avaliação individual:
+- média dos integrantes comparáveis do partido no período;
+- quantidade considerada;
+- cobertura média;
+- decisões e orientações institucionais documentadas;
+- histórico dessas decisões.
+
+A atuação individual e a atuação institucional do partido permanecerão separadas.
 
 ## Metodologia
 
@@ -50,8 +57,6 @@ A proposta v1.0 possui oito dimensões:
 
 Os pesos acima são uma **proposta metodológica** até o congelamento da versão correspondente.
 
-A metodologia detalhada está em [docs/metodologia/v1.0.md](docs/metodologia/v1.0.md) e os indicadores em [docs/metodologia/indicadores-v1.0.md](docs/metodologia/indicadores-v1.0.md).
-
 ## Princípios
 
 - Dados oficiais e verificáveis como base.
@@ -63,6 +68,8 @@ A metodologia detalhada está em [docs/metodologia/v1.0.md](docs/metodologia/v1.
 - Ideologia não é variável de mérito.
 - A IA auxilia a operação; não decide a avaliação.
 - Alterações metodológicas ficam registradas historicamente.
+- Resultados históricos não são sobrescritos silenciosamente.
+- Comparações respeitam cargo, período, cobertura e metodologia.
 
 ## Fontes prioritárias
 
@@ -71,6 +78,6 @@ A metodologia detalhada está em [docs/metodologia/v1.0.md](docs/metodologia/v1.
 - Tribunal Superior Eleitoral
 - Outras fontes públicas oficiais pertinentes a cada cargo
 
-## Estrutura planejada
+## Estrutura
 
-`Fonte oficial → coleta → normalização → validação → armazenamento → cálculo determinístico → API → interface → auditoria`
+Fonte oficial → coleta → normalização → validação → armazenamento → cálculo determinístico → API → interface → auditoria
