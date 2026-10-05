@@ -1,18 +1,36 @@
 # Histórico da metodologia
 
-## v1.0
+## v1.0 — Proposta inicial
 
-**Status:** proposta inicial.
+**Status:** em revisão.
 
-Escopo inicial:
+A metodologia v1.0 estabelece oito dimensões gerais e a estrutura de indicadores do projeto.
 
-- deputados federais;
-- escala de 0 a 100;
-- oito dimensões;
-- fontes públicas oficiais;
-- trilha de auditoria;
-- IA restrita a processamento, normalização, verificação e explicação.
+## Ordem de expansão dos cargos
 
-Nenhum peso ou fórmula deve ser considerado imutável nesta fase.
+A implementação será progressiva:
 
-Alterações futuras deverão registrar versão, data, motivo, regras afetadas e impacto esperado.
+1. **Deputados Federais**
+2. **Senadores**
+3. **Governadores**
+4. **Presidente da República**
+
+### Regra de expansão
+
+A metodologia deverá ser adaptada ao cargo analisado.
+
+Indicadores legislativos não serão aplicados automaticamente ao Poder Executivo. Indicadores próprios de execução administrativa também não serão transferidos para o Legislativo sem justificativa metodológica.
+
+Cada nova categoria de cargo deverá registrar:
+
+- fontes utilizadas;
+- indicadores aplicáveis;
+- indicadores não aplicáveis e motivo;
+- fórmulas;
+- pesos;
+- regras de comparabilidade;
+- cobertura mínima;
+- tratamento de casos excepcionais;
+- data de entrada em produção.
+
+A inclusão de uma nova categoria de cargo não deverá alterar retroativamente os resultados históricos de outra categoria sem uma nova versão metodológica explicitamente documentada.
