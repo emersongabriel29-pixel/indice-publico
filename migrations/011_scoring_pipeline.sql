@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS legislative_production (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),politician_id uuid NOT NULL,period_id uuid NOT NULL,proposition_id text NOT NULL,role text NOT NULL,event_date date,outcome text,source_id uuid,collected_at timestamptz NOT NULL DEFAULT now(),UNIQUE(politician_id,period_id,proposition_id,role));
+CREATE TABLE IF NOT EXISTS proposition_tramitation (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),proposition_id text NOT NULL,period_id uuid NOT NULL,event_date date,tramitation_type text,description text,status text,source_id uuid,collected_at timestamptz NOT NULL DEFAULT now(),UNIQUE(proposition_id,period_id,event_date,tramitation_type,description));
+CREATE TABLE IF NOT EXISTS proposition_authors (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),proposition_id text NOT NULL,politician_id uuid,author_external_id text,author_name text,author_type text,period_id uuid NOT NULL,source_id uuid,collected_at timestamptz NOT NULL DEFAULT now(),UNIQUE(proposition_id,period_id,author_external_id));
+CREATE INDEX IF NOT EXISTS idx_legprod_period_politician ON legislative_production(period_id,politician_id);
+CREATE INDEX IF NOT EXISTS idx_tramit_period_prop ON proposition_tramitation(period_id,proposition_id);
+CREATE INDEX IF NOT EXISTS idx_authors_period_prop ON proposition_authors(period_id,proposition_id);

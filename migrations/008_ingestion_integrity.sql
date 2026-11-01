@@ -1,0 +1,14 @@
+ALTER TABLE expenses ADD COLUMN IF NOT EXISTS external_id TEXT;
+ALTER TABLE expenses ADD COLUMN IF NOT EXISTS availability_state TEXT NOT NULL DEFAULT 'observed';
+ALTER TABLE expenses ADD COLUMN IF NOT EXISTS collected_at TIMESTAMPTZ NOT NULL DEFAULT now();
+ALTER TABLE votes ADD COLUMN IF NOT EXISTS external_id TEXT;
+ALTER TABLE votes ADD COLUMN IF NOT EXISTS availability_state TEXT NOT NULL DEFAULT 'observed';
+ALTER TABLE votes ADD COLUMN IF NOT EXISTS collected_at TIMESTAMPTZ NOT NULL DEFAULT now();
+ALTER TABLE propositions ADD COLUMN IF NOT EXISTS external_id TEXT;
+ALTER TABLE propositions ADD COLUMN IF NOT EXISTS availability_state TEXT NOT NULL DEFAULT 'observed';
+ALTER TABLE propositions ADD COLUMN IF NOT EXISTS collected_at TIMESTAMPTZ NOT NULL DEFAULT now();
+CREATE UNIQUE INDEX IF NOT EXISTS uq_expenses_external_id ON expenses(external_id) WHERE external_id IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS uq_votes_external_id ON votes(external_id) WHERE external_id IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS uq_propositions_external_id ON propositions(external_id) WHERE external_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_votes_date ON votes(vote_date);
+CREATE INDEX IF NOT EXISTS idx_expenses_date ON expenses(expense_date);

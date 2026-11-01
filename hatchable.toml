@@ -1,0 +1,39 @@
+[[cron]]
+path = "/api/jobs/sync-camara"
+schedule = "0 * * * *"
+
+[[cron]]
+path = "/api/jobs/sync-camara-data"
+schedule = "15 2 * * *"
+
+[[cron]]
+path = "/api/jobs/sync-camara-legislative"
+schedule = "45 2 * * *"
+
+[[cron]]
+path = "/api/jobs/sync-camara-attendance"
+schedule = "25 2 * * *"
+
+[[cron]]
+path = "/api/jobs/sync-senado"
+schedule = "30 2 * * *"
+
+[[cron]]
+path = "/api/jobs/sync-tse"
+schedule = "0 3 * * *"
+
+[[cron]]
+path = "/api/jobs/sync-tse-election"
+schedule = "15 3 * * *"
+
+[[cron]]
+path = "/api/jobs/sync-camara-vote-eligibility"
+schedule = "05 3 * * *"
+
+[[cron]]
+path = "/api/jobs/derive-indicators"
+schedule = "20 3 * * *"
+
+[[cron]]
+path = "/api/jobs/calculate-snapshots"
+schedule = "30 3 * * *"
